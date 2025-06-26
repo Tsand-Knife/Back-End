@@ -21,9 +21,6 @@ class ScoreResponse(BaseModel):
     id_topic: int
     score: int
 
-    # Jika Anda ingin mengembalikan objek User dan Topic di dalam ScoreResponse
-    # user: UserResponse # Uncoment ini jika Anda mau responsnya detail user
-    # topic: TopicResponse # Uncoment ini jika Anda mau responsnya detail topic
 
     class Config:
         from_attributes = True
@@ -31,5 +28,3 @@ class ScoreResponse(BaseModel):
 # Schema untuk update score (optional fields)
 class ScoreUpdate(BaseModel):
     score: Optional[int] = None
-    # id_user: Optional[int] = None # Biasanya tidak diupdate
-    # id_topic: Optional[int] = None # Biasanya tidak diupdate

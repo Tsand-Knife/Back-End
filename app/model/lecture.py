@@ -4,7 +4,7 @@ from ..database import Base
 # from .topic import Topic # Tidak perlu diimpor jika tidak ada relasi
 
 class Lecture(Base):
-    __tablename__ = "tblectures" # Pastikan nama tabel ini sesuai dengan "tblectures" di PostgreSQL Anda
+    __tablename__ = "tblectures"
 
     id_lecture = Column(Integer, primary_key=True, index=True)
     lecture_name = Column(String, index=True, nullable=False)

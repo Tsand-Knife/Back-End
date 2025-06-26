@@ -5,13 +5,11 @@ from typing import Optional, List
 from .user import UserResponse
 from .topic import TopicResponse
 
-# Schema untuk data yang dibutuhkan saat membuat entri leaderboard baru
-# Catatan: 'position' biasanya dihitung di backend, jadi mungkin tidak perlu di 'Create'
 class LeaderboardCreate(BaseModel):
     id_user: int
     id_topic: int
     score: int
-    position: int # Jika Anda ingin backend mengirimkan ini secara eksplisit, atau hapus jika dihitung otomatis
+    position: int # masih nggak yakin untuk ini
 
     class Config:
         from_attributes = True
@@ -24,7 +22,7 @@ class LeaderboardResponse(BaseModel):
     score: int
     position: int
 
-    # Jika Anda ingin mengembalikan objek User dan Topic di dalam LeaderboardResponse
+    # kalo mau nampilin User dan Topic di dalam LeaderboardResponse
     # user: UserResponse
     # topic: TopicResponse
 

@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from ..database import Base
 
 class User(Base):
-    __tablename__ = "tbusers" # Sesuaikan dengan nama tabel di PostgreSQL Anda (tbusers)
+    __tablename__ = "tbusers"
 
     id_user = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)

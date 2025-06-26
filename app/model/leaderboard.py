@@ -5,7 +5,7 @@ from .user import User # Import model User
 from .topic import Topic # Import model Topic
 
 class Leaderboard(Base):
-    __tablename__ = "tbleaderboard" # Atau "tbleaderboard" jika Anda ingin konsisten dengan nama tabel di DB Anda
+    __tablename__ = "tbleaderboard"
 
     id_lb = Column(Integer, primary_key=True, index=True)
     id_user = Column(Integer, ForeignKey("users.id_user"), nullable=True) #ganti false nanti kalo udah isi db

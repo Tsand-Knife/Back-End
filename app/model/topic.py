@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from ..database import Base
 
 class Topic(Base):
-    __tablename__ = "tbtopics" # Pastikan nama tabel ini sesuai dengan yang Anda buat di PostgreSQL
+    __tablename__ = "tbtopics"
 
     id_topic = Column(Integer, primary_key=True, index=True)
     topic_name = Column(String, unique=True, index=True, nullable=False)

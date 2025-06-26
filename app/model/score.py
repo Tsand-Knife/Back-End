@@ -5,7 +5,7 @@ from .user import User # Import model User
 from .topic import Topic # Import model Topic
 
 class Score(Base):
-    __tablename__ = "tbscores" # Atau "tbscpres" jika Anda ingin konsisten dengan nama tabel di DB Anda
+    __tablename__ = "tbscores"
 
     id_score = Column(Integer, primary_key=True, index=True)
     id_user = Column(Integer, ForeignKey("users.id_user"), nullable=False)

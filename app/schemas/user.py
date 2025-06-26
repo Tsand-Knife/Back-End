@@ -6,7 +6,7 @@ class UserCreate(BaseModel):
     email: EmailStr
     password: str
     name: str
-    role: bool # Tipe boolean untuk role (True/False atau 1/0)
+    role: bool # Tipe boolean untuk role (0/1 admin/user)
 
     class Config:
         from_attributes = True
@@ -16,7 +16,7 @@ class UserResponse(BaseModel):
     id_user: int
     email: EmailStr
     name: str
-    role: bool # Tipe boolean untuk role
+    role: bool
 
     class Config:
         from_attributes = True
@@ -26,7 +26,6 @@ class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
-# Schema untuk update user (optional fields)
 class UserUpdate(BaseModel):
     name: Optional[str] = None
     email: Optional[EmailStr] = None

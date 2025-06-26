@@ -5,8 +5,8 @@ from .routers import user as user_router
 from .routers import score as score_router
 from .routers import leaderboard as leaderboard_router
 from .database import engine, Base
-# Impor semua model yang ingin dibuat tabelnya secara otomatis
-from .model import topic # Pastikan semua model diimpor agar Base.metadata.create_all() mengenalinya
+
+from .model import user, topic, lecture, score, leaderboard  # import model
 
 app = FastAPI(
     title="ThinkEd API",
@@ -16,8 +16,6 @@ app = FastAPI(
 
 @app.on_event("startup")
 def on_startup():
-    # Ini akan membuat tabel jika belum ada.
-    # Pastikan semua model (User, Topic, dll.) sudah diimpor di atas agar Base.metadata.create_all mengenali mereka.
     Base.metadata.create_all(bind=engine)
     print("Database tables created/checked.")
 

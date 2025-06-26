@@ -12,9 +12,8 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
     return db.query(user_model.User).offset(skip).limit(limit).all()
 
 def create_user(db: Session, user: user_schemas.UserCreate):
-    # PENTING: Anda HARUS mengganti ini dengan hashing password yang aman di produksi
-    # Contoh sederhana tanpa hashing (TIDAK DIREKOMENDASIKAN untuk produksi):
-    fake_hashed_password = user.password + "notreallyhashed" # Contoh: HASHING AKAN DILAKUKAN DI SINI
+    #hshing password, belum jadi
+    fake_hashed_password = user.password + "notreallyhashed"
     
     db_user = user_model.User(
         email=user.email,

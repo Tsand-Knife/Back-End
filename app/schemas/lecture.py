@@ -5,7 +5,6 @@ from typing import Optional
 class LectureCreate(BaseModel):
     lecture_name: str
     content: str
-    # id_topic: int # Hapus atau komentari ini
 
     class Config:
         from_attributes = True
@@ -15,7 +14,6 @@ class LectureResponse(BaseModel):
     id_lecture: int
     lecture_name: str
     content: str
-    # id_topic: int # Hapus atau komentari ini
 
     class Config:
         from_attributes = True
