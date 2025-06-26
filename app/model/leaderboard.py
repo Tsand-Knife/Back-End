@@ -18,5 +18,5 @@ class Leaderboard(Base):
     # Definisikan relasi dengan Topic
     topic = relationship("Topic", back_populates="leaderboards") # Perhatikan nama back_populates
 
-    def __repr__(self):]
+    def __repr__(self):
         return f"<Leaderboard(id_lb={self.id_lb}, id_user={self.id_user}, id_topic={self.id_topic}, score={self.score}, position={self.position})>"
